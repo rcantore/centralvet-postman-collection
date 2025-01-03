@@ -268,7 +268,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8000/api/historias-clinicas/mascota/{{mascota_id}}",
+							"raw": "http://localhost:8000/api/mascotas/{{mascota_id}}/historia-clinica",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -276,9 +276,9 @@
 							"port": "8000",
 							"path": [
 								"api",
-								"historias-clinicas",
-								"mascota",
-								"{{mascota_id}}"
+								"mascotas",
+								"{{mascota_id}}",
+								"historia-clinica"
 							]
 						}
 					},
