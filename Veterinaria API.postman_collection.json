@@ -1,7 +1,7 @@
 {
 	"info": {
-		"_postman_id": "6d680e56-72e9-49d5-9f03-3857c16732fe",
-		"name": "Veterinaria API",
+		"_postman_id": "ffc3a2f7-6fa4-47bb-a719-ba216a4f046d",
+		"name": "CentralVet API",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "4302"
 	},
@@ -15,14 +15,11 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8000/api/clinicas",
-							"protocol": "http",
+							"raw": "{{base_url}}/clinicas",
 							"host": [
-								"localhost"
+								"{{base_url}}"
 							],
-							"port": "8000",
 							"path": [
-								"api",
 								"clinicas"
 							]
 						}
@@ -35,14 +32,11 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8000/api/clinicas/{{clinica_id}}",
-							"protocol": "http",
+							"raw": "{{base_url}}/clinicas/{{clinica_id}}",
 							"host": [
-								"localhost"
+								"{{base_url}}"
 							],
-							"port": "8000",
 							"path": [
-								"api",
 								"clinicas",
 								"{{clinica_id}}"
 							]
@@ -62,17 +56,14 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"nombre\": \"Veterinaria San Martín\",\n    \"direccion\": \"Av. Principal 123\",\n    \"telefono\": \"555-1234\",\n    \"correo\": \"contacto@vetsanmartin.com\"\n}"
+							"raw": ""
 						},
 						"url": {
-							"raw": "http://localhost:8000/api/clinicas",
-							"protocol": "http",
+							"raw": "{{base_url}}/clinicas",
 							"host": [
-								"localhost"
+								"{{base_url}}"
 							],
-							"port": "8000",
 							"path": [
-								"api",
 								"clinicas"
 							]
 						}
@@ -85,14 +76,11 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8000/api/clinicas/{{clinica_id}}/clientes",
-							"protocol": "http",
+							"raw": "{{base_url}}/clinicas/{{clinica_id}}/clientes",
 							"host": [
-								"localhost"
+								"{{base_url}}"
 							],
-							"port": "8000",
 							"path": [
-								"api",
 								"clinicas",
 								"{{clinica_id}}",
 								"clientes"
@@ -112,14 +100,11 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8000/api/clientes",
-							"protocol": "http",
+							"raw": "{{base_url}}/clientes",
 							"host": [
-								"localhost"
+								"{{base_url}}"
 							],
-							"port": "8000",
 							"path": [
-								"api",
 								"clientes"
 							]
 						}
@@ -132,14 +117,11 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8000/api/clientes/{{cliente_id}}",
-							"protocol": "http",
+							"raw": "{{base_url}}/clientes/{{cliente_id}}",
 							"host": [
-								"localhost"
+								"{{base_url}}"
 							],
-							"port": "8000",
 							"path": [
-								"api",
 								"clientes",
 								"{{cliente_id}}"
 							]
@@ -159,17 +141,14 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"nombre\": \"Juan\",\n    \"apellido\": \"Pérez\",\n    \"correo\": \"juan@email.com\",\n    \"telefono\": \"555-5678\",\n    \"direccion\": \"Calle 456\"\n}"
+							"raw": ""
 						},
 						"url": {
-							"raw": "http://localhost:8000/api/clientes",
-							"protocol": "http",
+							"raw": "{{base_url}}/clientes",
 							"host": [
-								"localhost"
+								"{{base_url}}"
 							],
-							"port": "8000",
 							"path": [
-								"api",
 								"clientes"
 							]
 						}
@@ -182,19 +161,33 @@
 			"name": "Mascotas",
 			"item": [
 				{
-					"name": "Listar Mascotas de Cliente",
+					"name": "Listar Mascotas",
 					"request": {
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8000/api/mascotas?id_cliente={{cliente_id}}",
-							"protocol": "http",
+							"raw": "{{base_url}}/mascotas",
 							"host": [
-								"localhost"
+								"{{base_url}}"
 							],
-							"port": "8000",
 							"path": [
-								"api",
+								"mascotas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Mascotas por Cliente",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/mascotas?id_cliente={{cliente_id}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
 								"mascotas"
 							],
 							"query": [
@@ -213,14 +206,11 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8000/api/mascotas/{{mascota_id}}",
-							"protocol": "http",
+							"raw": "{{base_url}}/mascotas/{{mascota_id}}",
 							"host": [
-								"localhost"
+								"{{base_url}}"
 							],
-							"port": "8000",
 							"path": [
-								"api",
 								"mascotas",
 								"{{mascota_id}}"
 							]
@@ -240,17 +230,14 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"nombre\": \"Firulais\",\n    \"especie\": \"Perro\",\n    \"raza\": \"Labrador\",\n    \"fecha_nacimiento\": \"2020-01-15\",\n    \"id_cliente\": \"{{cliente_id}}\"\n}"
+							"raw": ""
 						},
 						"url": {
-							"raw": "http://localhost:8000/api/mascotas",
-							"protocol": "http",
+							"raw": "{{base_url}}/mascotas",
 							"host": [
-								"localhost"
+								"{{base_url}}"
 							],
-							"port": "8000",
 							"path": [
-								"api",
 								"mascotas"
 							]
 						}
@@ -268,14 +255,11 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8000/api/mascotas/{{mascota_id}}/historia-clinica",
-							"protocol": "http",
+							"raw": "{{base_url}}/mascotas/{{mascota_id}}/historia-clinica",
 							"host": [
-								"localhost"
+								"{{base_url}}"
 							],
-							"port": "8000",
 							"path": [
-								"api",
 								"mascotas",
 								"{{mascota_id}}",
 								"historia-clinica"
@@ -290,14 +274,11 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8000/api/historias-clinicas/{{historia_id}}",
-							"protocol": "http",
+							"raw": "{{base_url}}/historias-clinicas/{{historia_id}}",
 							"host": [
-								"localhost"
+								"{{base_url}}"
 							],
-							"port": "8000",
 							"path": [
-								"api",
 								"historias-clinicas",
 								"{{historia_id}}"
 							]
@@ -317,17 +298,14 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"id_mascota\": \"{{mascota_id}}\",\n    \"id_cliente\": \"{{cliente_id}}\"\n}"
+							"raw": ""
 						},
 						"url": {
-							"raw": "http://localhost:8000/api/historias-clinicas",
-							"protocol": "http",
+							"raw": "{{base_url}}/historias-clinicas",
 							"host": [
-								"localhost"
+								"{{base_url}}"
 							],
-							"port": "8000",
 							"path": [
-								"api",
 								"historias-clinicas"
 							]
 						}
@@ -340,14 +318,11 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8000/api/historias-clinicas/{{historia_id}}/entradas",
-							"protocol": "http",
+							"raw": "{{base_url}}/historias-clinicas/{{historia_id}}/entradas",
 							"host": [
-								"localhost"
+								"{{base_url}}"
 							],
-							"port": "8000",
 							"path": [
-								"api",
 								"historias-clinicas",
 								"{{historia_id}}",
 								"entradas"
@@ -368,17 +343,14 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"descripcion\": \"Consulta de rutina\",\n    \"diagnostico\": \"Paciente saludable\",\n    \"tratamiento\": \"No requiere\",\n    \"notas\": \"Próxima revisión en 6 meses\"\n}"
+							"raw": ""
 						},
 						"url": {
-							"raw": "http://localhost:8000/api/historias-clinicas/{{historia_id}}/entradas",
-							"protocol": "http",
+							"raw": "{{base_url}}/historias-clinicas/{{historia_id}}/entradas",
 							"host": [
-								"localhost"
+								"{{base_url}}"
 							],
-							"port": "8000",
 							"path": [
-								"api",
 								"historias-clinicas",
 								"{{historia_id}}",
 								"entradas"
@@ -392,21 +364,8 @@
 	],
 	"variable": [
 		{
-			"key": "clinica_id",
-			"value": ""
-		},
-		{
-			"key": "cliente_id",
-			"value": ""
-		},
-		{
-			"key": "mascota_id",
-			"value": ""
-		},
-		{
-			"key": "historia_id",
-			"value": ""
+			"key": "base_url",
+			"value": "http://localhost:8000/api"
 		}
 	]
 }
-
